@@ -126,11 +126,11 @@ public class DingTalkSender extends AbstractSender {
         }
     }
 
-    private void recordSendLog(String urlPrefix, String paras) {
-        Cat.logError(urlPrefix + "---" + paras, new AbstractSender.AlertSendException());
+    protected void recordSendLog(String urlPrefix, String paras) {
+        Cat.logError(urlPrefix + "---" + paras, new AlertSendException());
     }
 
-    private class AlertSendException extends Exception {
+    protected class AlertSendException extends Exception {
 
         private static final long serialVersionUID = 1L;
 

@@ -1,5 +1,6 @@
 package com.dianping.cat.alarm.spi.sender;
 
+import com.dianping.cat.Cat;
 import com.dianping.cat.alarm.sender.entity.Sender;
 import com.dianping.cat.alarm.spi.AlertChannel;
 import com.google.gson.Gson;
@@ -123,6 +124,16 @@ public class DingTalkSender extends AbstractSender {
                 recordSendLog(urlStr, contentJsonStr);
             }
         }
+    }
+
+    private void recordSendLog(String urlPrefix, String paras) {
+        Cat.logError(urlPrefix + "---" + paras, new AbstractSender.AlertSendException());
+    }
+
+    private class AlertSendException extends Exception {
+
+        private static final long serialVersionUID = 1L;
+
     }
 
 

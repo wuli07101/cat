@@ -7,9 +7,9 @@ RUN	yum install -y wget
 RUN	yum install -y tar
 
 #JAVA (OPENJDK 7)
-ENV JAVA_VERSION 1.7.0
+ENV JAVA_VERSION 1.8.0
 
-RUN yum install -y java-1.7.0-openjdk java-1.7.0-openjdk-devel
+RUN yum install -y java-1.8.0-openjdk java-1.8.0-openjdk-devel
 
 ENV JAVA_HOME /usr/lib/jvm/java
 
@@ -21,7 +21,7 @@ WORKDIR $CATALINA_HOME
 
 
 ENV TOMCAT_MAJOR_VERSION 7
-ENV TOMCAT_MINOR_VERSION 7.0.96
+ENV TOMCAT_MINOR_VERSION 7.0.105
 
 RUN wget -q https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-${TOMCAT_MAJOR_VERSION}/v${TOMCAT_MINOR_VERSION}/bin/apache-tomcat-${TOMCAT_MINOR_VERSION}.tar.gz && \
     tar zxf apache-tomcat-*.tar.gz && \
